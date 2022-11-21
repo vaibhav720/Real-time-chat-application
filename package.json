@@ -1,0 +1,23 @@
+{
+  "name": "real-time-chat-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaibhav720/Real-time-chat-application.git"
+  },
+  "author": "Vaibhav Parikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaibhav720/Real-time-chat-application/issues"
+  },
+  "homepage": "https://github.com/vaibhav720/Real-time-chat-application#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
