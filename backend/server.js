@@ -1,8 +1,10 @@
 const express = require("express");
 const dotenv =require("dotenv");
 const connectDB = require("./config/db");
-const userRoutes = require("./routes/userRoutes")
+const userRoutes = require("./routes/userRoutes");
+const cors= require("cors");
 
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 
 
@@ -11,18 +13,17 @@ const app =express();
  dotenv.config();
  connectDB();
  app.use(express.json());
-
+app.use(cors({origin:"http://localhost:3000"}))
 
  app.use("/api/user", userRoutes);
-app.get("/",(req,res)=>{
-    res.send("API is running");
-});
-app.get("/api/chat",(req,res)=>{
-    res.send("API is running");
-});
-app.get("/api/chat/:id",(req,res)=>{
-    res.send("API is running");
-});
+
+
+
+ 
+// Error Handling middlewares
+app.use(notFound);
+app.use(errorHandler);
+ 
 
 const PORT = process.env.PORT
 app.listen(PORT,console.log(PORT))

@@ -51,14 +51,13 @@ function SignUp() {
           },
         };
         const { data } = await axios.post(
-          "/api/user",
+          "http://localhost:5000/api/user",
           {
             name,
             email,
             password,
             pic,
-          },
-          config
+          }
         );
         console.log(data);
         toast({
@@ -101,8 +100,8 @@ function SignUp() {
         const data = new FormData();
         data.append("file", pics);
         data.append("upload_preset", "chat-app");
-        data.append("cloud_name", "piyushproj");
-        fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+        data.append("cloud_name", "dibxj37sh");
+        fetch("https://api.cloudinary.com/v1_1/dibxj37sh/image/upload", {
           method: "post",
           body: data,
         })

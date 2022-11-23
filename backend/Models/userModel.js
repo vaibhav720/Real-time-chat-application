@@ -1,5 +1,5 @@
 const mongoose= require("mongoose");
-const bcrypt = require("bcryptjs");
+const bcrypt = require("bcrypt");
 
 const userSchema = mongoose.Schema(
     {
@@ -17,7 +17,7 @@ const userSchema = mongoose.Schema(
         },
         pic:{
             type: String,
-            default:""
+            default:"https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
         },
     },
     {
@@ -38,6 +38,6 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
     this.password = await bcrypt.hash(this.password, salt);
   });
   
-const User = mongoose.Model("User",userSchema );
+const User = mongoose.model("User",userSchema );
 
 module.exports = User;
