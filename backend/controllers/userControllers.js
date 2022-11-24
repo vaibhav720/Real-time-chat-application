@@ -23,6 +23,7 @@ const allUsers = asyncHandler(async (req, res) => {
 //@route           POST /api/user/
 //@access          Public
 const registerUser = asyncHandler(async (req, res) => {
+  console.log("Reached till here")
   const { name, email, password, pic } = req.body;
 
   if (!name || !email || !password) {

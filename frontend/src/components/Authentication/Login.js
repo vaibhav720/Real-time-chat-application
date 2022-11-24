@@ -32,7 +32,7 @@ function Login() {
       return;
     }
 
-    // console.log(email, password);
+    console.log(email, password);
     try {
       const config = {
         headers: {
@@ -41,7 +41,7 @@ function Login() {
       };
 
       const { data } = await axios.post(
-        "/api/user/login",
+        "http://localhost:5000/api/user/login",
         { email, password }
       );
 
